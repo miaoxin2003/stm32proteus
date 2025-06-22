@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "bsp_clkconfig.h": "c",
+        "bsp_mcooutput.h": "c",
+        "bsp_18b20.h": "c",
+        "bsp_usart.h": "c",
+        "bsp_generaltim.h": "c",
+        "bsp_ds1302.h": "c",
+        "bsp_i2c.h": "c",
+        "bsp_led.h": "c",
+        "bsp_keyarray.h": "c"
+    }
+}
