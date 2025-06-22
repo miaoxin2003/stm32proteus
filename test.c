@@ -530,7 +530,7 @@ uint16_t Calculate_Smoke_Concentration(uint16_t adc_value)
 }
 
 /*
- * DHT11数据读取函数
+ * DHT11数据读取函数...
  * DHT11传感器采用单总线协议，需要严格的时序控制
  */
 u8 DHT11_Read_Data(u8 *temp, u8 *humi)
