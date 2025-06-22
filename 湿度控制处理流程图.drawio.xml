@@ -1,0 +1,246 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.2 Chrome/134.0.6998.205 Electron/35.3.0 Safari/537.36" version="27.0.2">
+  <diagram name="湿度控制处理流程图" id="humidity-control-process">
+    <mxGraphModel dx="1811" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" value="开始" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="80" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="read_dht11" value="读取DHT11数据&#xa;温度和湿度" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="80" y="150" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="data_valid" value="数据有效性&#xa;检查？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="80" y="220" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="return_error" value="返回错误&#xa;使用上次数据" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="250" y="230" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="read_water" value="读取水位&#xa;传感器数据" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="80" y="310" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="water_safe" value="水位在安全范围&#xa;(5-30cm)？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="80" y="385" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="humidity_50" value="湿度 ≤ 50%？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="80" y="490" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="humidity_70" value="50% &lt; 湿度&#xa;≤ 70%？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="280" y="490" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="humidity_85" value="70% &lt; 湿度&#xa;≤ 85%？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="480" y="490" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="max_humid" value="最大加湿&#xa;伺服电机180°" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="80" y="600" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="close_water" value="关闭加湿器&#xa;伺服电机0°&#xa;(水位异常)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="280" y="395" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="close_humid" value="关闭加湿器&#xa;伺服电机0°&#xa;(湿度过高)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="680" y="495" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="update_oled" value="更新OLED显示&#xa;• 温度值&#xa;• 湿度值&#xa;• 水位值&#xa;• 电机状态" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="900" y="500" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="return" value="返回" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#666666;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="910" y="620" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="start" target="read_dht11" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="140" as="sourcePoint" />
+            <mxPoint x="180" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="read_dht11" target="data_valid" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="230" as="sourcePoint" />
+            <mxPoint x="180" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" value="无效" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="data_valid" target="return_error" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="290" as="sourcePoint" />
+            <mxPoint x="240" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" value="有效" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="data_valid" target="read_water" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="330" as="sourcePoint" />
+            <mxPoint x="180" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="read_water" target="water_safe" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="420" as="sourcePoint" />
+            <mxPoint x="180" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge6" value="否" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="water_safe" target="close_water" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="485" as="sourcePoint" />
+            <mxPoint x="270" y="475" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge7" value="是" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="water_safe" target="humidity_50" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="530" as="sourcePoint" />
+            <mxPoint x="180" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge8" value="是" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="humidity_50" target="max_humid" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="630" as="sourcePoint" />
+            <mxPoint x="180" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge9" value="否" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="humidity_50" target="humidity_70" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="590" as="sourcePoint" />
+            <mxPoint x="270" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge10" value="是" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="humidity_70" target="medium_humid" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="630" as="sourcePoint" />
+            <mxPoint x="380" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge11" value="否" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="humidity_70" target="humidity_85" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="590" as="sourcePoint" />
+            <mxPoint x="470" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge12" value="是" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="humidity_85" target="min_humid" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="530" y="630" as="sourcePoint" />
+            <mxPoint x="580" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge13" value="否" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="humidity_85" target="close_humid" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="590" y="590" as="sourcePoint" />
+            <mxPoint x="670" y="585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge14" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.2;entryDx=0;entryDy=0;" parent="1" source="close_water" target="update_oled" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="475" as="sourcePoint" />
+            <mxPoint x="890" y="516" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="850" y="420" />
+              <mxPoint x="850" y="516" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge15" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" parent="1" source="min_humid" target="update_oled" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="700" as="sourcePoint" />
+            <mxPoint x="890" y="532" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="850" y="620" />
+              <mxPoint x="850" y="532" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge16" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.6;entryDx=0;entryDy=0;" parent="1" source="medium_humid" target="update_oled" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="700" as="sourcePoint" />
+            <mxPoint x="890" y="548" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="850" y="620" />
+              <mxPoint x="850" y="548" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge17" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.8;entryDx=0;entryDy=0;" parent="1" source="min_humid" target="update_oled" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="590" y="700" as="sourcePoint" />
+            <mxPoint x="890" y="564" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="850" y="620" />
+              <mxPoint x="850" y="564" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge18" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="close_humid" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="790" y="585" as="sourcePoint" />
+            <mxPoint x="910" y="650" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="800" y="520" />
+              <mxPoint x="800" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge19" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="return_error" target="update_oled" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="290" as="sourcePoint" />
+            <mxPoint x="890" y="500" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="850" y="250" />
+              <mxPoint x="850" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge20" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="update_oled" target="return" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="960" y="590" as="sourcePoint" />
+            <mxPoint x="1010" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="max_label" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;最大加湿策略&lt;br&gt;湿度 ≤ 50%&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="70" y="650" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="medium_label" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;中等加湿策略&lt;br&gt;50% &amp;lt; 湿度 ≤ 70%&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="270" y="650" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="min_label" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;最小加湿策略&lt;br&gt;70% &amp;lt; 湿度 ≤ 85%&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="480" y="650" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="close_label" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;关闭策略&lt;br&gt;湿度 &amp;gt; 85% 或水位异常&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="670" y="630" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="data_group" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6c8ebf;strokeWidth=2;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="70" width="140" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="data_label" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;数据采集处理&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="80" y="40" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="control_group" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#9673a6;strokeWidth=2;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="250" y="380" width="540" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="control_label" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;湿度控制策略&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="470" y="350" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="display_group" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d79b00;strokeWidth=2;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="880" y="480" width="160" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="display_label" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;显示输出&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="930" y="455" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gQR5fqWrMCLPHB3AcRpM-2" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="max_humid" target="medium_humid">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="620" as="sourcePoint" />
+            <mxPoint x="900" y="532" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="medium_humid" value="中等加湿&#xa;伺服电机120°" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#d79b00;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="280" y="600" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gQR5fqWrMCLPHB3AcRpM-3" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="medium_humid" target="min_humid">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="620" as="sourcePoint" />
+            <mxPoint x="900" y="532" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="min_humid" value="最小加湿&#xa;伺服电机60°" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="480" y="600" width="100" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

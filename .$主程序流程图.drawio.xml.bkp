@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-12-22T00:00:00.000Z" agent="5.0" etag="xxx" version="22.1.11" type="device">
+  <diagram name="主程序流程图" id="main-program-flowchart">
+    <mxGraphModel dx="1422" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- 标题 -->
+        <mxCell id="title" value="主程序流程图" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="200" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- 开始 -->
+        <mxCell id="start" value="开始" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="70" width="100" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- 系统初始化 -->
+        <mxCell id="system_init" value="系统初始化&#xa;• 时钟配置 (HSI_SetSysClock)&#xa;• GPIO初始化 (GPIO_Config)&#xa;• ADC初始化 (ADCx_Init)&#xa;• 定时器初始化 (GENERAL_TIM_Init)&#xa;• 串口初始化 (USART_Config)&#xa;• 显示屏初始化 (LCD_Init)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="280" y="150" width="240" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- 显示欢迎信息 -->
+        <mxCell id="welcome_msg" value="显示欢迎信息&#xa;• LCD显示 &quot;Welcome!&quot;&#xa;• 延时1秒&#xa;• 清屏&#xa;• 显示 &quot;Detector&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="300" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- 进入主循环 -->
+        <mxCell id="main_loop" value="进入主循环&#xa;while(1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- 读取烟雾传感器数据 -->
+        <mxCell id="read_smoke" value="读取烟雾传感器数据&#xa;• ADC采样&#xa;• 数据滤波&#xa;• 电压转换" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="500" width="160" height="70" as="geometry" />
+        </mxCell>
+        
+        <!-- 烟雾浓度处理 -->
+        <mxCell id="smoke_process" value="烟雾浓度处理&#xa;• 浓度计算&#xa;• 阈值判断&#xa;• LED控制&#xa;• 蜂鸣器控制&#xa;• 风扇控制" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="600" width="160" height="90" as="geometry" />
+        </mxCell>
+        
+        <!-- 读取温湿度数据 -->
+        <mxCell id="read_dht11" value="读取温湿度数据&#xa;• DHT11通信&#xa;• 数据校验&#xa;• 温度获取&#xa;• 湿度获取" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="720" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- 读取水位数据 -->
+        <mxCell id="read_water" value="读取水位数据&#xa;• ADC采样&#xa;• 数据转换&#xa;• 水位计算" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="830" width="160" height="70" as="geometry" />
+        </mxCell>
+        
+        <!-- 湿度控制处理 -->
+        <mxCell id="humidity_control" value="湿度控制处理&#xa;• 安全检查&#xa;• 湿度判断&#xa;• 伺服电机控制&#xa;• 加湿器调节" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="930" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- 更新显示 -->
+        <mxCell id="update_display" value="更新显示&#xa;• LCD显示烟雾浓度&#xa;• OLED显示温湿度&#xa;• OLED显示水位&#xa;• 状态指示更新" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1040" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- 串口数据输出 -->
+        <mxCell id="uart_output" value="串口数据输出&#xa;• 烟雾浓度数据&#xa;• 系统状态信息&#xa;• 调试信息" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1150" width="160" height="70" as="geometry" />
+        </mxCell>
+        
+        <!-- 延时 -->
+        <mxCell id="delay" value="延时&#xa;DelayMs(500)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1250" width="100" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- 连接线 -->
+        <!-- 开始到系统初始化 -->
+        <mxCell id="edge1" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="start" target="system_init">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="180" as="sourcePoint" />
+            <mxPoint x="440" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 系统初始化到显示欢迎信息 -->
+        <mxCell id="edge2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="system_init" target="welcome_msg">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="280" as="sourcePoint" />
+            <mxPoint x="440" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 显示欢迎信息到进入主循环 -->
+        <mxCell id="edge3" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="welcome_msg" target="main_loop">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="390" as="sourcePoint" />
+            <mxPoint x="440" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 进入主循环到读取烟雾传感器数据 -->
+        <mxCell id="edge4" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="main_loop" target="read_smoke">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="480" as="sourcePoint" />
+            <mxPoint x="440" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 读取烟雾传感器数据到烟雾浓度处理 -->
+        <mxCell id="edge5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="read_smoke" target="smoke_process">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="580" as="sourcePoint" />
+            <mxPoint x="440" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 烟雾浓度处理到读取温湿度数据 -->
+        <mxCell id="edge6" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="smoke_process" target="read_dht11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="700" as="sourcePoint" />
+            <mxPoint x="440" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 读取温湿度数据到读取水位数据 -->
+        <mxCell id="edge7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="read_dht11" target="read_water">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="810" as="sourcePoint" />
+            <mxPoint x="440" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 读取水位数据到湿度控制处理 -->
+        <mxCell id="edge8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="read_water" target="humidity_control">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="910" as="sourcePoint" />
+            <mxPoint x="440" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 湿度控制处理到更新显示 -->
+        <mxCell id="edge9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="humidity_control" target="update_display">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="1020" as="sourcePoint" />
+            <mxPoint x="440" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 更新显示到串口数据输出 -->
+        <mxCell id="edge10" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="update_display" target="uart_output">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="1130" as="sourcePoint" />
+            <mxPoint x="440" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 串口数据输出到延时 -->
+        <mxCell id="edge11" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="uart_output" target="delay">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="1230" as="sourcePoint" />
+            <mxPoint x="440" y="1180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 延时回到主循环 -->
+        <mxCell id="edge12" value="循环" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="delay" target="main_loop">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="1275" as="sourcePoint" />
+            <mxPoint x="320" y="440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="250" y="1275" />
+              <mxPoint x="250" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 功能模块分组框 -->
+        <mxCell id="smoke_group" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="480" width="200" height="230" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="smoke_label" value="烟雾检测模块" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="510" y="485" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="humidity_group" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#82b366;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="700" width="200" height="330" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="humidity_label" value="湿度控制模块" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="510" y="705" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="display_group" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d6b656;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1020" width="200" height="120" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="display_label" value="显示模块" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1025" width="60" height="20" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
